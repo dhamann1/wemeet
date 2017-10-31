@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-private
-
-  # Make the current_user method available to views, not just controllers!
+  private
   helper_method :current_user
 
   def current_user

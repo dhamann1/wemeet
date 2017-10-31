@@ -1,0 +1,37 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Created By:</strong> 
+  <%= @user.user_name %>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.time.strftime('%A, %d %b %Y %l:%M %p') %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<% @event.comments.each do |comment| %>
+  
+  <p><%=comment.user.user_name%>&nbsp;&nbsp;<%= comment.content %> <%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %> </p>
+<% end %>
+
+
+
+<%= form_for [@event, @comment] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit 'Add Comment' %>
+<% end %>

@@ -10,16 +10,21 @@ class EventsController < ApplicationController
 
     def create 
         @event = Event.new(event_params)
-            if @event.save
-                redirect to root_path
-            else 
-                render:new
-            end 
+        @event.user = current_user
+        if @event.save
+            redirect to root_path
+        else 
+            render:new
+        end 
     end
     
-    def index
-        @events = Event.all 
+    def show 
+        @event = Event.find_by(params[:event_id])
+        @user = User.find_by(params[:event_id])
+        @comment = Comment.new
+        ## list all comments associated with specific event 
     end 
+
     private 
     
         def event_params
