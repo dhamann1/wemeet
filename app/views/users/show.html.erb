@@ -1,10 +1,10 @@
 <h1> Sup </h1> 
-<%= image_tag @user.image.url %>
+
 
 <%= @user.first_name%> 
 <%= @user.last_name%>
 </br>
-<%=@user.inspect %> 
+
 <h2>Events Created</h2> 
 <% @user.events.each do |event| %> 
     <%= event.name %> &nbsp;&nbsp;

@@ -4,13 +4,22 @@
     <title>WeMeet</title>
     <%= csrf_meta_tags %>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
   <body>
   <p>
+    <%= link_to 'Home', events_path%>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
   <% if current_user %>
     Welcome, <%= current_user.user_name %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Create a WeMeet Event', new_event_path%> 
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
   <% else %>
