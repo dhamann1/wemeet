@@ -2,19 +2,28 @@
 
 
 
-<%= link_to "Edit your WeMeet", edit_event_path(@event) if current_user == @event.user%>
+<%= link_to "Edit your WeMeet", edit_event_path(@event) if current_user == @event.user%> </br>
 <%= link_to "Delete your WeMeet", event_path(@event), method: :delete if current_user == @event.user%>
 
+
+
+
+<p> 
+  <%= image_tag @event.image.url(:med)%>
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
 </p>
 
 <p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
 
+
+<p>
   <strong>Created By:</strong> 
   <%= link_to @event.user.user_name, user_path(@event.user) %>
-
 <p>
   <strong>Date:</strong>
   <%= @event.time.strftime('%A, %d %b %Y %l:%M %p') %>
@@ -25,10 +34,6 @@
   <%= @event.location %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
 
   <p>
   <strong>Number of People Attending: </strong>  
@@ -44,7 +49,6 @@
   </p>
 <% end %>
 
-// <link_to "Delete", event_path(@event), method: :delete%> 
 
 
 <%= form_for [@event, @comment] do |f| %>

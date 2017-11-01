@@ -1,9 +1,17 @@
-<h1> Sup </h1> 
 
 
-<%= @user.first_name%> 
-<%= @user.last_name%>
-</br>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <%= @user.first_name%>
+        <%= @user.last_name%>
+    </div>
+</div>
+
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+
+
+
 
 <h2>Events Created</h2> 
 <% @user.events.each do |event| %> 
