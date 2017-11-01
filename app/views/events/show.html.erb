@@ -1,12 +1,17 @@
 
+
+
+
+<%= link_to "Edit your WeMeet", edit_event_path(@event) if current_user == @event.user%>
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
 </p>
 
 <p>
+
   <strong>Created By:</strong> 
-  <%= @user.user_name %>
+  <%= link_to @event.user.user_name, user_path(@event.user) %>
 
 <p>
   <strong>Date:</strong>
@@ -23,9 +28,18 @@
   <%= @event.description %>
 </p>
 
+  <p>
+  <strong>Number of People Attending: </strong>  
+  <%=@event.attendances.count%>
+  </p>
+
+<%= link_to 'Attend', event_attendances_path(@event), method: :post if current_user && current_user != @event.user && !Attendance.exists?(user: current_user, event_id: @event.id)%>
+
 <% @event.comments.each do |comment| %>
   
-  <p><%=comment.user.user_name%>&nbsp;&nbsp;<%= comment.content %> <%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %> </p>
+  <p>
+    <%= link_to comment.user.user_name, user_path(comment.user) %>&nbsp;&nbsp;<%= comment.content %> <%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %> 
+  </p>
 <% end %>
 
 

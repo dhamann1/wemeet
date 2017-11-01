@@ -3,11 +3,11 @@
  <p>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.name %></td>
+        <td><%= link_to event.name, event_path(event) %></td>
         <td><%= event.location %></td>
         <td><%= event.time.strftime('%A, %d %b %Y %l:%M %p') %></td>
         <td><%= event.description %></td>
-        <td><%= link_to 'Event', event %></td> <br/> 
+        <td><%= link_to 'Event', event_path(event) %></td> <br/> 
       </tr>
     <% end %>
 

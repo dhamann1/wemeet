@@ -12,23 +12,36 @@ class EventsController < ApplicationController
         @event = Event.new(event_params)
         @event.user = current_user
         if @event.save
-            redirect to root_path
+            redirect_to root_path
         else 
             render:new
         end 
     end
     
     def show 
-        @event = Event.find_by(params[:event_id])
-        @user = User.find_by(params[:event_id])
+        @event = Event.find(params[:id])
         @comment = Comment.new
-        ## list all comments associated with specific event 
+    end 
+
+    def edit
+        @event = Event.find(params[:id])
+    end
+
+    def update
+        @event = Event.find(params[:id])
+        @event.update_attributes(event_params)
+        redirect_to event_path(@event)
+    end 
+
+    def destroy 
+        @event = Event.find(params[:id])
+        @event.destroy
     end 
 
     private 
     
         def event_params
-            params.require(:event).permit(:name, :location, :description, :time, :image)
+            params.require(:event).permit(:name, :location, :description, :category, :time, :image)
         end 
 
 end

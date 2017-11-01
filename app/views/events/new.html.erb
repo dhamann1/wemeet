@@ -11,10 +11,18 @@
       </ul>
     </div>
   <% end %>
+  <%= form_for @event, url: users_path, html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %>
   <div class="field">
     <%= f.label :name, "What's the name of your WeMeet?" %> <br /> 
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :category %> <br /> 
+    <%= f.select :category, options_for_select(["Tech", "Food", "Fitness", "Art"]) %>
+  </div>
+
+   
   <div class="field">
     <%= f.label :location, "Where will your WeMeet be held?" %>
     <%= f.text_field :location %>
@@ -32,3 +40,4 @@
 
 
 <%= link_to 'Back', events_path %>
+<% end %>
