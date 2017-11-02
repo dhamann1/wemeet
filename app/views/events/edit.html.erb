@@ -23,7 +23,7 @@
   </div>
   <div class="field">
     <%= f.label :category, "What kind of WeMeet?" %> </br>
-    <%= f.select :category, options_for_select(["Find Type","Tech", "Food & Drink", "Fitness", "Art"]), required: 'true' %>
+    <%= f.select :category, options_for_select(["Tech", "Food & Drink", "Fitness", "Art"]), required: 'true' %>
   </div>
 
   <div class="field">
@@ -36,13 +36,15 @@
   </div>
   <div class="field">
     <%= f.label :description,  "Describe who should join and what your WeMeet is" %> </br>
-    <%= f.text_area :description, required: 'true'  %>
+    <div class="eventTextArea">
+    <%= f.text_area :description, :rows=>5, :cols=>30, required: 'true'  %>
+    </div> 
   </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
 
 </br> 
-<%= link_to 'Back', events_path %>
+<%= button_to 'Back', events_path %>
 </div>
 </dv>
 

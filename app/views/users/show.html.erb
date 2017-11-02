@@ -1,20 +1,18 @@
 
 
-<div class="userContainer"> 
-<p> 
-  <%= image_tag @user.image.url(:med)%>
-<p>
-
-
+<div class="userInfo"> 
+<%= image_tag @user.image.url(:large), class: "eventShow"%>
+<div class="eventHead">
 <%= @user.first_name%>
 <%= @user.last_name%>
-
+</h1> 
+</div> 
 
 <h4>Events Created</h4> 
 <ul class="flex-3-cols">
     <% @user.events.each do |event| %>
-      <li>
-          <%= image_tag event.image.url(:med)%></br>
+      <li class="eventIndex">
+          <%= image_tag event.image.url(:medium)%></br>
           <%= link_to event.name, event_path(event) %></br>
           <%= event.category %> </br> 
           <%= event.time.strftime('%A, %d %b %y')%>
@@ -25,12 +23,11 @@
 <h4>Events Attending</h4> 
 <ul class="flex-3-cols">
     <% @user.events_attending.each do |event| %>
-      <li>
-          <%= image_tag event.image.url(:med)%></br>
+        <li class="eventIndex">
+          <%= image_tag event.image.url(:medium)%></br>
           <%= link_to event.name, event_path(event) %></br>
           <%= event.category %> </br> 
-      </li>
+       </li>
     <% end %> 
 </ul>
-
 </div> 

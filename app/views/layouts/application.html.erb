@@ -10,28 +10,33 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<div class="topNav">
-<nav class="navbar navbar-default">
-  <% if current_user %>
-    Welcome, <%= link_to current_user.first_name, user_path(current_user) %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Home', events_path%>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Create a WeMeet Event', new_event_path%> 
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-    &nbsp;&nbsp;| &nbsp;&nbsp;
-  <% else %>
-    <%= link_to 'Home', events_path%>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log In', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-  </nav>
-  </div>
-    <body class=<%= "signUpBackground" if (request.path == '/users/new' || request.path == '/login' || request.path == '/users' || request.path == "/events/new" || request.path == "/events/#{params[:id]}/edit")  %>>
-
+    <% if (request.path == '/users/new' || request.path == '/login' || request.path == '/users' || request.path == "/events/new" || request.path == "/events/#{params[:id]}/edit") %>
+      <body class="signUpBackground">
+    <% elsif (request.path == "/events/#{params[:id]}" || request.path == "/users/#{params[:id]}") %>
+      <body class="eventBackground">
+    <% else %>
+      <body>
+    <% end %>
+        <div class="topNav">
+          <nav class="navbar navbar-default">
+            <% if current_user %>
+              Welcome, <%= link_to current_user.first_name, user_path(current_user) %>
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <%= link_to 'Home', events_path%>
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <%= link_to 'Create a WeMeet Event', new_event_path%> 
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+              &nbsp;&nbsp;| &nbsp;&nbsp;
+            <% else %>
+              <%= link_to 'Home', events_path%>
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <%= link_to 'Log In', login_path %>
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <%= link_to 'Sign Up', new_user_path %>
+            <% end %>
+            </nav>
+          </div>
       <%= yield %>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

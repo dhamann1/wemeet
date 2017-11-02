@@ -47,6 +47,12 @@ ul {
 	margin-top: 30px;
 }
 
+li {
+	list-style-type:none; 
+	font-family: 'Judson', serif;
+    font-size: 16px; 
+}
+
 .flex-3-cols {
 	@include flex-grid-items(3)
 }
@@ -69,6 +75,12 @@ ul {
 .eventHome {
 	border-radius: 8px;
 }
+
+.eventShow{
+	border-radius: 8px;
+	margin: 0 auto; 
+	display: inherit
+}
 h1.main.jumbotron-heading {
 	color: white;
 	font-family: 'Quando', serif;
@@ -85,7 +97,7 @@ li.eventIndex {
 }
 h4 {
 	text-align: center;
-	font-family: 'Judson', serif;
+	font-family: 'Quando', serif;
 }
 
 p {
@@ -128,20 +140,81 @@ p {
     background-size: cover;
 }
 
+.eventBackground { 
+	background: url('https://i.imgur.com/t7fQdd0.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .eventForm{
 	background:rgba(202, 199, 199, 0.452);
 	margin: auto;
 	width: 40%; 
 	border-radius: 10%;
 	text-align: center;
+	padding-top: 2%; 
+	margin-top: 2%;
 }
 
 .eventAForm {
 	font-family: 'Judson', serif;	
 	font-size: 17px;
 	margin: auto; 
-	width: 40%; 
+	width: 40%;
+	text-align: center; 
+	
 }
-  
 
-  /* SHOW PAGE FOR USER */
+.eventSPage{
+margin-left: 1%; 
+margin-bottom: 5%;
+margin-top: 5%;
+margin: 50px auto; 
+width: 40%;  
+
+}
+
+.eventWords{
+	background:rgba(202, 199, 199, 0.877);	
+	padding: 2%; 
+	border-radius: 3%; 
+}
+
+.eventdescription{
+	text-align: center; 
+	font-family: 'Judson', serif;	
+	font-size: 17px;	
+}
+
+
+
+.eventHead{
+	font-family: 'Quando', serif;
+	text-align: center; 
+	font-size: 25px; 	
+}
+
+.commentBox{
+	font-family: 'Judson', serif;	
+	font-size: 16px;	
+}
+
+.eventLinks{
+	margin: 2% auto;
+	text-align: center; 
+}
+
+
+.userInfo{
+	text-align: center; 
+	margin: 0 auto; 
+	background:rgba(202, 199, 199, 0.877);
+	margin: auto;
+	width: 40%; 
+	border-radius: 10%;
+	text-align: center;
+	padding-top: 2%; 
+	margin-top: 2%;
+}
