@@ -1,29 +1,36 @@
 
 
-<div class="panel panel-default">
-    <div class="panel-body">
-        <%= @user.first_name%>
-        <%= @user.last_name%>
-    </div>
-</div>
-
-<span class="label label-primary">Primary</span>
-<span class="label label-success">Success</span>
+<div class="userContainer"> 
+<p> 
+  <%= image_tag @user.image.url(:med)%>
+<p>
 
 
+<%= @user.first_name%>
+<%= @user.last_name%>
 
 
-<h2>Events Created</h2> 
-<% @user.events.each do |event| %> 
-    <%= event.name %> &nbsp;&nbsp;
-    <%= event.location %>
-    </br>
-<% end %> 
+<h4>Events Created</h4> 
+<ul class="flex-3-cols">
+    <% @user.events.each do |event| %>
+      <li>
+          <%= image_tag event.image.url(:med)%></br>
+          <%= link_to event.name, event_path(event) %></br>
+          <%= event.category %> </br> 
+          <%= event.time.strftime('%A, %d %b %y')%>
+      </li>
+    <% end %> 
+  </ul>
 </br>
-<h2>Events Attending</h2> 
-<% @user.events_attending.each do |event| %>
-    <%=event.name %> &nbsp;&nbsp;
-    <%=event.location %> 
-    </br> 
-<% end %> 
+<h4>Events Attending</h4> 
+<ul class="flex-3-cols">
+    <% @user.events_attending.each do |event| %>
+      <li>
+          <%= image_tag event.image.url(:med)%></br>
+          <%= link_to event.name, event_path(event) %></br>
+          <%= event.category %> </br> 
+      </li>
+    <% end %> 
+</ul>
 
+</div> 

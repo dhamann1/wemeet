@@ -11,4 +11,3 @@ Comment.destroy_all
 Event.destroy_all
 
 
-

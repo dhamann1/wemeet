@@ -12,3 +12,88 @@
  *
  */
 
+
+
+
+
+/*Index Page*/ 
+
+.topNav{
+    font-family: 'Judson', serif;
+    font-size: 16px; 
+}
+
+.navbar{
+	min-height: 40px; 
+
+}
+
+
+
+@mixin flex-grid-items($cols) {
+	display: flex;
+	flex-wrap: wrap;
+	>* {
+		$item-width: 100% / $cols;
+		width: 30%;
+		box-sizing: border-box;
+		margin: 3px;
+	}
+}
+ul {
+	list-style-type: none;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+.flex-3-cols {
+	@include flex-grid-items(3)
+}
+.jumbotron {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	margin-bottom: 0;
+	background-image: url('https://i.imgur.com/PWkB4Ht.jpg');
+	background-size: cover;
+}
+.jumbotron p:last-child {
+	margin-bottom: 0;
+}
+.jumbotron-heading {
+	font-weight: 300;
+}
+.jumbotron .container {
+	max-width: 40rem;
+}
+.eventHome {
+	border-radius: 8px;
+}
+h1.main.jumbotron-heading {
+	color: white;
+	font-family: 'Quando', serif;
+}
+p.lead.text-muted {
+	color: white;
+	font-family: 'Quando', serif;
+	margin-top: 0px;
+}
+li.eventIndex {
+	text-align: center;
+    font-family: 'Judson', serif;
+    font-size: 16px; 
+}
+h4 {
+	text-align: center;
+	font-family: 'Judson', serif;
+}
+.commentPic {
+	border-radius: 60%;
+}
+
+.btn{
+	float: left; 
+}
+
+  
+
+  /* SHOW PAGE FOR USER */

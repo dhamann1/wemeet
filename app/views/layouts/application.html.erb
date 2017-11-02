@@ -3,20 +3,29 @@
   <head>
     <title>WeMeet</title>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quando" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Judson" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark indigo">
-   
 
+
+
+
+<div class="topNav">
+<nav class="navbar navbar-default">
   <% if current_user %>
-    Welcome, <%= current_user.user_name %>
+    Welcome, <%= link_to current_user.first_name, user_path(current_user) %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Home', events_path%>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Create a WeMeet Event', new_event_path%> 
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+    &nbsp;&nbsp;| &nbsp;&nbsp;
   <% else %>
     <%= link_to 'Home', events_path%>
     &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -24,7 +33,8 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Sign Up', new_user_path %>
   <% end %>
-</nav>
+  </nav>
+  </div>
     <%= yield %>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

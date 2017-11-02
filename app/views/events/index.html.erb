@@ -1,17 +1,41 @@
- <div class="center jumbotron"> <h1>Welcome to WeMeet! </h1></div> 
- 
- <p>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to event.name, event_path(event) %></td>
-        <td><%= event.location %></td>
-        <td><%= event.time.strftime('%A, %d %b %Y %l:%M %p') %></td>
-        <td><%= event.description %></td>
-        <td><%= link_to 'Event', event_path(event) %></td> <br/> 
-      </tr>
-    <% end %>
 
-</p>
+
+   <section class="jumbotron text-center">
+        <div class="eventIndexContainer">
+          <div class="h1main"><h1 class="main jumbotron-heading">Welcome to WeMeet</h1></div>
+          <p class="lead text-muted">What do you love? Come find your next experience</p>
+          <p>
+            <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+            <%= select_tag :category, options_for_select(["Explore", "Tech", "Food & Drink", "Fitness", "Art"]) %>
+            <%= submit_tag "Search", :class => "class_name"%></a>
+            <% end %> 
+          </p>
+        </div>
+      </section>
+
+
+
+ 
+
+  
+ <ul class="flex-3-cols">
+    <% @events.each do |event| %>
+      <li class="eventIndex">
+          <%= image_tag event.image.url(:large), :class => "eventHome"%></br>
+          <%= link_to event.name, event_path(event) %></br>
+          <%= event.category %> </br> 
+          <%= event.time.strftime('%A, %b %d')%>
+      </li>
+    <% end %> 
+  </ul>
+     
+   
+
+
+
+
+
+
 
 
 

@@ -3,6 +3,11 @@ class EventsController < ApplicationController
 
     def index 
         @events = Event.all
+        if params[:category]
+            @events = Event.where(category: params[:category]).order("created_at DESC")
+          else
+            @events = Event.all.order("created_at DESC")
+          end
     end
     
     def new 
@@ -13,9 +18,9 @@ class EventsController < ApplicationController
         @event = Event.new(event_params)
         @event.user = current_user
         if @event.save
-            redirect_to root_path
+            redirect_to event_path(@event)
         else 
-            render:new
+            render :new
         end 
     end
     
@@ -41,7 +46,7 @@ class EventsController < ApplicationController
     end 
 
     private 
-    
+     
         def event_params
             params.require(:event).permit(:name, :location, :description, :category, :time, :image)
         end 

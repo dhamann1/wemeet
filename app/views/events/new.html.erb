@@ -1,4 +1,4 @@
-<h1>Create A New WeMeet Event</h1>
+<h1>Create A New WeMeet</h1>
 
 <%= form_for @event, html: { multipart: true } do |f| %>
   <% if @event.errors.any? %>
@@ -11,14 +11,15 @@
       </ul>
     </div>
   <% end %>
+  <%= f.label :image, "Upload WeMeet Event Picture" %>
   <%= f.file_field :image %>
   <div class="field">
     <%= f.label :name, "What's the name of your WeMeet?" %> <br /> 
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :category %> <br /> 
-    <%= f.select :category, options_for_select(["Tech", "Food", "Fitness", "Art"]) %>
+    <%= f.label :category, "What kind of WeMeet?" %> <br /> 
+    <%= f.select :category, options_for_select(["Find Type","Tech", "Food & Drink", "Fitness", "Art"]) %>
   </div>
 
    
@@ -37,5 +38,5 @@
   <div class="actions"><%= f.submit %></div>
 <% end %>
 
-
+</br></br> 
 <%= link_to 'Back', events_path %>
