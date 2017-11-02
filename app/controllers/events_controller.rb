@@ -21,7 +21,7 @@ class EventsController < ApplicationController
             redirect_to event_path(@event)
         else 
         flash[:upload_image_notice] = "Please upload image"
-        render :new
+            redirect_to new_event_path
         end 
     end
     

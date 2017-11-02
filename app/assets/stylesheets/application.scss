@@ -20,11 +20,12 @@
 
 .topNav{
     font-family: 'Judson', serif;
-    font-size: 16px; 
+    font-size: 20px; 
 }
 
 .navbar{
 	min-height: 40px; 
+	margin-bottom: 0px;
 
 }
 
@@ -88,14 +89,13 @@ h4 {
 }
 
 p {
-	text-align: center;
 	font-family: 'Judson', serif;	
 	font-size: 16px;
 }
 
 .signUpForm {
 	font-family: 'Judson', serif;	
-	font-size: 16px;
+	font-size: 17px;
 	margin: auto; 
 	width: 35%; 
 }
@@ -110,11 +110,11 @@ p {
 
 .signUpHeader {
 	font-family: 'Quando', serif;
-	text-align: center 
+	text-align: center;
 }
 
 .signForm{
-	background:rgba(202, 199, 199, 0.562);
+	background:rgba(202, 199, 199, 0.452);
 	margin: auto;
 	width: 35%; 
 	border-radius: 10%; 
@@ -126,6 +126,21 @@ p {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.eventForm{
+	background:rgba(202, 199, 199, 0.452);
+	margin: auto;
+	width: 40%; 
+	border-radius: 10%;
+	text-align: center;
+}
+
+.eventAForm {
+	font-family: 'Judson', serif;	
+	font-size: 17px;
+	margin: auto; 
+	width: 40%; 
 }
   
 
