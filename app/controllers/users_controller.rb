@@ -6,15 +6,17 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.new(user_params)
-        if @user.save 
+        
+        if user_params.has_key?("image") && @user.save
             session[:user_id] = @user.id
             redirect_to root_path
         else 
+            flash[:upload_image_notice] = "Please upload image"
             render :new
         end 
     end 
 
-        
+
     def show 
         @user = User.find(params[:id])
     end 

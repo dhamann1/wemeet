@@ -7,56 +7,42 @@
 
 
 
-<p> 
+
   <%= image_tag @event.image.url(:large), class: "eventHome"%>
-<p>
 
 
+<div class="eventLinks"> 
 <%= link_to "Edit your WeMeet", edit_event_path(@event) if current_user == @event.user%> &nbsp;&nbsp;|&nbsp;&nbsp;
-
-
 <%= link_to"Delete your WeMeet", event_path(@event), method: :delete if current_user == @event.user%></br></br> 
+</div> 
 
 
+<p> 
   <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-
-<p>
-  <strong>Created By:</strong> 
-  <%= link_to @event.user.user_name, user_path(@event.user) %>
-<p>
+  <%= @event.name %> </br>
   <strong>Date:</strong>
-  <%= @event.time.strftime('%A, %d %b %Y %l:%M %p') %>
-</p>
-
-<p>
+  <%= @event.time.strftime('%A, %d %b %Y %l:%M %p') %> </br> 
   <strong>Location:</strong>
-  <%= @event.location %>
+  <%= @event.location %> </br> 
+  <strong>Created By:</strong> 
+  <%= link_to @event.user.user_name, user_path(@event.user) %> </br> 
+  <strong>Number of People Attending: </strong>  
+  <%=@event.attendances.count%> </br> 
+  <strong>Description:</strong>
+  <%= simple_format(@event.description) %> </br> 
 </p>
 
 
-  <p>
-  <strong>Number of People Attending: </strong>  
-  <%=@event.attendances.count%>
-  </p>
 
 <%= link_to 'Attend', event_attendances_path(@event), method: :post if current_user && current_user != @event.user && !Attendance.exists?(user: current_user, event_id: @event.id)%>
 
 <% @event.comments.each do |comment| %>  
 <li>
 <%= image_tag comment.user.image.url(:med), class: "img-rounded" %> &nbsp;&nbsp;<%= link_to comment.user.user_name, user_path(comment.user) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= comment.content %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %></br></br> 
-</li>
+</td>
 <% end %>
 
 <%= form_for [@event, @comment] do |f| %>
-  <%= f.label :content %>
   <%= f.text_field :content %>
   <%= f.submit 'Add Comment' %>
 <% end %>

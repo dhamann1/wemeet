@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
           # flash.now is used for messaging
           # during the CURRENT request
           flash.now.alert = 'Invalid login credentials - try again!'
-          render :new
+          redirect_to login_path
         end
       end
     

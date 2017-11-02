@@ -1,10 +1,12 @@
 <h1>Create A New WeMeet</h1>
 
+<div class="eventForm"> 
 <%= form_for @event, html: { multipart: true } do |f| %>
   <% if @event.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
+        <%=flash[:upload_image_notice]%>
         <% for message in @user.errors.full_messages %>
           <li><%= message %></li>
         <% end %>
@@ -15,28 +17,29 @@
   <%= f.file_field :image %>
   <div class="field">
     <%= f.label :name, "What's the name of your WeMeet?" %> <br /> 
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: 'true'  %>
   </div>
   <div class="field">
     <%= f.label :category, "What kind of WeMeet?" %> <br /> 
-    <%= f.select :category, options_for_select(["Find Type","Tech", "Food & Drink", "Fitness", "Art"]) %>
+    <%= f.select :category, options_for_select(["Find Type","Tech", "Food & Drink", "Fitness", "Art"]), required: 'true' %>
   </div>
 
    
   <div class="field">
     <%= f.label :location, "Where will your WeMeet be held?" %>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, required: 'true'  %>
   </div>
   <div class="field">
     <%= f.label :time,  "What time will your WeMeet be held?" %>
-    <%= f.datetime_field :time %>
+    <%= f.datetime_field :time, required: 'true'  %>
   </div>
   <div class="field">
     <%= f.label :description,  "Describe who should join and what your WeMeet is" %>
-    <%= f.text_field :description %>
+    <%= f.text_area :description, required: 'true'  %>
   </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
 
 </br></br> 
 <%= link_to 'Back', events_path %>
+</div>

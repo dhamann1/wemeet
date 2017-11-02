@@ -86,6 +86,19 @@ h4 {
 	text-align: center;
 	font-family: 'Judson', serif;
 }
+
+p {
+	text-align: center;
+	font-family: 'Judson', serif;	
+	font-size: 16px;
+}
+
+.signUpForm {
+	font-family: 'Judson', serif;	
+	font-size: 16px;
+	margin: auto; 
+	width: 35%; 
+}
 .commentPic {
 	border-radius: 60%;
 }
@@ -94,6 +107,26 @@ h4 {
 	float: left; 
 }
 
+
+.signUpHeader {
+	font-family: 'Quando', serif;
+	text-align: center 
+}
+
+.signForm{
+	background:rgba(202, 199, 199, 0.562);
+	margin: auto;
+	width: 35%; 
+	border-radius: 10%; 
+}
+
+.signUpBackground { 
+	background: url('https://i.imgur.com/JR9uo9w.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
   
 
   /* SHOW PAGE FOR USER */

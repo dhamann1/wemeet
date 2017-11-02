@@ -1,14 +1,17 @@
-<h1>Log In</h1>
+<div class="signForm">
+<div class="signUpHeader"><h1>Log In</h1></div>
+<div class="signUpForm">
 <p id="alert"><%= alert %></p>
 <%= form_tag sessions_path do %>
   <div class="field">
-    <%= label_tag :email %>
-    <%# params[:email] allows for the field to be prefilled with params info%> 
+    <%= label_tag :email %> </br> 
     <%= text_field_tag :email, params[:email] %>
   </div>
   <div class="field">
-    <%= label_tag :password %>
+    <%= label_tag :password %> </br> 
     <%= password_field_tag :password %>
-  </div>
+  </div> </br> 
   <div class="actions"><%= submit_tag "Log In" %></div>
 <% end %>
+</div> 
+</div> 
