@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	has_attached_file :image, styles: { small: "64x64", med: "200x200", large: "300x300" }	
+	has_attached_file :image, styles: { small: "64x64", med: "150x150", large: "300x300" }	
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/	
 	has_many :attendances, dependent: :destroy	
 	has_many :events, dependent: :destroy

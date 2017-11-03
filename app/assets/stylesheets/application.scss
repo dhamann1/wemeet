@@ -29,8 +29,6 @@
 
 }
 
-
-
 @mixin flex-grid-items($cols) {
 	display: flex;
 	flex-wrap: wrap;
@@ -41,6 +39,7 @@
 		margin: 3px;
 	}
 }
+
 ul {
 	list-style-type: none;
 	margin-left: 5%;
@@ -50,7 +49,7 @@ ul {
 li {
 	list-style-type:none; 
 	font-family: 'Judson', serif;
-    font-size: 16px; 
+    font-size: 18px; 
 }
 
 .flex-3-cols {
@@ -63,15 +62,19 @@ li {
 	background-image: url('https://i.imgur.com/PWkB4Ht.jpg');
 	background-size: cover;
 }
+
 .jumbotron p:last-child {
 	margin-bottom: 0;
 }
+
 .jumbotron-heading {
 	font-weight: 300;
 }
+
 .jumbotron .container {
 	max-width: 40rem;
 }
+
 .eventHome {
 	border-radius: 8px;
 }
@@ -81,20 +84,24 @@ li {
 	margin: 0 auto; 
 	display: inherit
 }
+
 h1.main.jumbotron-heading {
 	color: white;
 	font-family: 'Quando', serif;
 }
+
 p.lead.text-muted {
 	color: white;
 	font-family: 'Quando', serif;
 	margin-top: 0px;
 }
+
 li.eventIndex {
 	text-align: center;
     font-family: 'Judson', serif;
     font-size: 16px; 
 }
+
 h4 {
 	text-align: center;
 	font-family: 'Quando', serif;
@@ -111,6 +118,7 @@ p {
 	margin: auto; 
 	width: 35%; 
 }
+
 .commentPic {
 	border-radius: 60%;
 }
@@ -188,8 +196,6 @@ width: 40%;
 	font-size: 17px;	
 }
 
-
-
 .eventHead{
 	font-family: 'Quando', serif;
 	text-align: center; 
@@ -206,13 +212,12 @@ width: 40%;
 	text-align: center; 
 }
 
-
 .userInfo{
 	text-align: center; 
 	margin: 0 auto; 
 	background:rgba(202, 199, 199, 0.877);
 	margin: auto;
-	width: 40%; 
+	width: 50%; 
 	border-radius: 10%;
 	text-align: center;
 	padding-top: 2%; 
