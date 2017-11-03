@@ -19,7 +19,10 @@
 			</div>
 			<div class="commentBox">
 				<%@event.comments.each do |comment| %>
-					<li><%= image_tag comment.user.image.url(:med), class: "img-rounded" %>&nbsp;&nbsp;<%= link_to comment.user.user_name, user_path(comment.user) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= comment.content %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %><br>
+					<li class="commentText"><%= image_tag comment.user.image.url(:small), class: "img-rounded" %></br>
+          <%= link_to comment.user.user_name, user_path(comment.user) %></br> 
+          <%= comment.content %></br>
+          <%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %><br>
 					<br>
           </li>
           <%end %>
