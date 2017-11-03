@@ -1,6 +1,6 @@
 <div class="eventForm">
 		<div class="signUpHeader">
-			<h1>Edit Your New WeMeet Event</h1>
+			<h1>Edit Your WeMeet Event</h1>
 		</div>
 		<div class="eventAForm">
 			<%=flash[:upload_image_notice]%><%= form_for @event, html: { multipart: true } do |f| %><%if @event.errors.any? %>
