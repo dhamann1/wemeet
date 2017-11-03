@@ -1,7 +1,7 @@
 	<div class="userInfo">
 		<%= image_tag @user.image.url(:large), class: "eventShow"%>
 		<div class="eventHead">
-			<%= @user.first_name%>&nbsp;<%= @user.last_name%>
+			<%=@user.first_name%><%=@user.last_name%>
 		</div>
 		<h4>Events Created</h4>
 		<ul class="flex-3-cols">
