@@ -1,24 +1,32 @@
-# README
+# WeMeet
+> WeMeet is a full-stack application that allows people to create and find events based on certain interests such as Tech, Food & Drink, Art, and Fitness. WeMeet also allows for discussion prior to the event. 
+><img src="https://i.imgur.com/VO7Byoy.png">
+><img src="https://i.imgur.com/zOqsX6a.png">
+><img src="https://i.imgur.com/0EpYxBt.png">
+><img src="https://i.imgur.com/uXfPwB8.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+# Technologies Used
+	* Ruby
+	* Ruby on Rails
+	* HTML
 
-* Database creation
+# Getting Started
 
-* Database initialization
+<a href="https://murmuring-brook-31535.herokuapp.com/events">WeMeet</a>
 
-* How to run the test suite
+	
+# Next Steps
+I'd like to add the following features:
 
-* Services (job queues, cache servers, search engines, etc.)
+	* Receive email notifications for updates to event 
+	* Receieve email notifications for new comments on events created or attending 
+	* Add a hover animation for cards to show them 
+	* Nested comments and the ability to upload pictures in comments 
+	* Filter events by most people attending 
 
-* Deployment instructions
-
-* ...
+# Trello 
+<a href="https://trello.com/b/kobL2mIN/meetup-event-planning">Link to Trello</a>
