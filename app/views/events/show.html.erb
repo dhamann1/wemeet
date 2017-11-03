@@ -1,31 +1,32 @@
-	<div class="eventSPage">
-		<div class="eventWords">
-			<div class="eventHead">
-				<%= @event.name %>
-			</div><br>
-			<%= image_tag @event.image.url(:large), class: "eventShow"%>
-			<div class="eventLinks">
-				<%= link_to "Edit your WeMeet", edit_event_path(@event) if current_user == @event.user%>&nbsp;&nbsp; &nbsp;&nbsp; <%= link_to"Delete your WeMeet", event_path(@event), method: :delete if current_user == @event.user%><br>
-				<br>
-			</div>
-			<div class="eventdescription">
-				<strong>Date:</strong> <%= @event.time.strftime('%A, %d %b %Y %l:%M %p') %><br>
-				<strong>Location:</strong> <%= @event.location %><br>
-				<strong>Created By:</strong> <%= link_to @event.user.user_name, user_path(@event.user) %><br>
-				<strong>Number of People Attending:</strong> <%=@event.attendances.count%><br>
-				<strong>Description:</strong> <%= simple_format(@event.description) %><br>
-				<br>
-				<%= link_to 'Attend', event_attendances_path(@event), method: :post if current_user && current_user != @event.user && !Attendance.exists?(user: current_user, event_id: @event.id)%>
-			</div>
-			<div class="commentBox">
-				<%@event.comments.each do |comment| %>
-					<li class="commentText"><%= image_tag comment.user.image.url(:small), class: "img-rounded" %></br>
-          <%= link_to comment.user.user_name, user_path(comment.user) %></br> 
-          <%= comment.content %></br>
-          <%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %><br>
-					<br>
-          </li>
-          <%end %>
-			</div><%= form_for [@event, @comment] do |f| %><%= f.text_field :content %><%= f.submit 'Add Comment' %><%end %>
+<div class="eventSPage">
+	<div class="eventWords">
+		<div class="eventHead">
+			<%= @event.name %>
+		</div><br>
+		<%= image_tag @event.image.url(:large), class: "eventShow"%>
+		<div class="eventLinks">
+			<%= link_to "Edit your WeMeet", edit_event_path(@event) if current_user == @event.user%>&nbsp;&nbsp; &nbsp;&nbsp; <%= link_to"Delete your WeMeet", event_path(@event), method: :delete if current_user == @event.user%><br>
+			<br>
 		</div>
+		<div class="eventdescription">
+			<strong>Date:</strong> <%= @event.time.strftime('%A, %d %b %Y %l:%M %p') %><br>
+			<strong>Location:</strong> <%= @event.location %><br>
+			<strong>Created By:</strong> <%= link_to @event.user.user_name, user_path(@event.user) %><br>
+			<strong>Number of People Attending:</strong> <%=@event.attendances.count%><br>
+			<strong>Description:</strong> <%= simple_format(@event.description) %><br>
+			<br>
+			<%= link_to 'Attend', event_attendances_path(@event), method: :post if current_user && current_user != @event.user && !Attendance.exists?(user: current_user, event_id: @event.id)%>
+		</div>
+		<div class="commentBox">
+			<%@event.comments.each do |comment| %>
+				<li class="commentText"><%= image_tag comment.user.image.url(:small), class: "img-rounded" %></br>
+        		<%= link_to comment.user.user_name, user_path(comment.user) %></br> 
+        		<%= comment.content %></br>
+        		<%= link_to 'Delete', comment_path(comment), method: :delete if comment.user == current_user %><br><br>
+        		</li>
+        	<%end %>
+		</div>
+		<%= form_for [@event, @comment] do |f| %><%= f.text_field :content %><%= f.submit 'Add Comment' %>
+		<%end %>
 	</div>
+</div>
