@@ -18,6 +18,7 @@
 			<li class="eventIndex"><%= image_tag event.image.url(:small), :class => "eventHome"%><br>
 			<%= link_to event.name, event_path(event) %><br>
 			<%= event.category %><br></li>
+			<%= event.time.strftime('%A, %d %b %y')%></li>
 		<%end %>
 	</ul>
 </div>
