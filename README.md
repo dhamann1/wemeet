@@ -10,7 +10,6 @@
 
 
 # Technologies Used
-	* Ruby
 	* Ruby on Rails
 	* HTML
 
