@@ -3,7 +3,7 @@
 ><img src="https://i.imgur.com/VO7Byoy.png">
 ><img src="https://i.imgur.com/zOqsX6a.png">
 ><img src="https://i.imgur.com/0EpYxBt.png">
-><img src="https://i.imgur.com/uXfPwB8.png">
+><img src="https://i.imgur.com/6ySnGcO.png">
 
 
 
@@ -11,7 +11,8 @@
 
 # Technologies Used
 	* Ruby on Rails
-	* HTML
+	* Bootstrap 
+	* HTML/CSS
 
 # Getting Started
 
