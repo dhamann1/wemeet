@@ -15,11 +15,9 @@ WeMeet is a social media platform that allows users to create and discover event
 
 ## Technologies Used
 - Ruby on Rails
-- HTML 
-- CSS 
+- HTML5 
+- CSS3
 - PostgreSQL
-- JavaScript 
-- jQuery 
 - Bootstrap 
 
 ## The Design 
