@@ -28,7 +28,7 @@ User stories and wire frames can be found on Trello: <a href="https://trello.com
 
 
 ## Installation
-1. Clone the repo to your terminal ```git clone https://github.com/alexw14/VRoam.git```
+1. Clone the repo from your terminal ```git clone https://github.com/alexw14/VRoam.git```
 2. Create the database: ```rails db:create```
 3. Migrate the database: ```rails db:migrate```
 4. Seed the database: ```rails db:seed```
